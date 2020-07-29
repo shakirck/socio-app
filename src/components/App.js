@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import * as jwtDecode from 'jwt-decode';
+
 import { fetchPosts } from '../actions/posts';
 import { Home, Navbar, Page404, Login } from '.';
 import PropTypes from 'prop-types';
@@ -11,6 +13,12 @@ const signup = () => <div>signup</div>;
 export class App extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchPosts());
+    const token = localStorage.getItem('token');
+    console.log(token);
+    if (token) {
+      const user = jwtDecode(token);
+      console.log(user);
+    }
   }
 
   render() {

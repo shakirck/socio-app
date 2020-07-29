@@ -1,19 +1,82 @@
 import React, { Component } from 'react';
+import { startSignup, signup } from '../actions/auth';
+import { connect } from 'react-redux';
 
-export default class Signup extends Component {
+export class Signup extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: '',
+      name: '',
+      password: '',
+      confirmPassword: '',
+    };
+  }
+  handleInputChange = (field, value) => {
+    this.setState({
+      [field]: value,
+    });
+  };
+
+  onFormSubmit = (e) => {
+    e.preventDefault();
+    const { email, password, confirmPassword, name } = this.state;
+    if (email && password && confirmPassword && name) {
+      this.props.dispatch(startSignup);
+      this.props.dispatch(signup(email, password, confirmPassword, name));
+    }
+  };
   render() {
+    const { inProgress, error } = this.props.auth;
     return (
-      <form className="signup-form">
-        <span className="login-signup-header">Signup</span>
+      <form className="login-form">
+        <span className="login-signup-header"> Signup</span>
+        {error && <div className="alert error-dailog">{error}</div>}
         <div className="field">
-          <input type="email" placeholder="Email" required />
-          <input type="password" placeholder="Password" required />
-          <input type="password" placeholder="Confirm Password" required />
+          <input
+            placeholder="Name"
+            type="text"
+            required
+            onChange={(e) => this.handleInputChange('name', e.target.value)}
+          />
         </div>
         <div className="field">
-          <button>Signup</button>
+          <input
+            placeholder="Email"
+            type="email"
+            required
+            onChange={(e) => this.handleInputChange('email', e.target.value)}
+          />
+        </div>
+        <div className="field">
+          <input
+            placeholder="Confirm password"
+            type="password"
+            required
+            onChange={(e) =>
+              this.handleInputChange('confirmPassword', e.target.value)
+            }
+          />
+        </div>
+        <div className="field">
+          <input
+            placeholder="Password"
+            type="password"
+            required
+            onChange={(e) => this.handleInputChange('password', e.target.value)}
+          />
+        </div>
+        <div className="field">
+          <button onClick={this.onFormSubmit} disabled={inProgress}>
+            Signup
+          </button>
         </div>
       </form>
     );
   }
 }
+
+const mapStorageToProps = ({ auth }) => ({ auth });
+
+export default connect(mapStorageToProps)(Signup);
