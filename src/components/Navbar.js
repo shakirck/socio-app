@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logoutUser } from '../actions/auth';
 
-export default class Navbar extends Component {
+export class Navbar extends Component {
+  logout = () => {
+    localStorage.removeItem('token');
+
+    this.props.dispatch(logoutUser());
+  };
   render() {
+    const { auth } = this.props;
     return (
       <nav className="nav">
         <div className="left-div">
@@ -42,25 +50,31 @@ export default class Navbar extends Component {
           </div>
         </div>
         <div className="right-nav">
-          <div className="user">
-            <img
-              src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
-              alt="user-dp"
-              id="user-dp"
-            />
-            <span>John Doe</span>
-          </div>
+          {auth.isLoggedin && (
+            <div className="user">
+              <Link to="/settings">
+                <img
+                  src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
+                  alt="user-dp"
+                  id="user-dp"
+                />
+              </Link>
+              <span>{auth.user.name}</span>
+            </div>
+          )}
           <div className="nav-links">
             <ul>
-              <li>
-                <Link to="/login">Log in</Link>
-              </li>
-              <li>
-                <Link to="/signup">Signup</Link>
-              </li>
-              <li>
-                <Link to="/logout">Log out</Link>
-              </li>
+              {!auth.isLoggedin && (
+                <li>
+                  <Link to="/login">Log in</Link>
+                </li>
+              )}
+              {!auth.isLoggedin && (
+                <li>
+                  <Link to="/signup">Signup</Link>
+                </li>
+              )}
+              {auth.isLoggedin && <li onClick={this.logout}>Logout</li>}
             </ul>
           </div>
         </div>
@@ -68,3 +82,10 @@ export default class Navbar extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    auth: state.auth,
+  };
+}
+export default connect(mapStateToProps)(Navbar);

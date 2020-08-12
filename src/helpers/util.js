@@ -8,3 +8,7 @@ export function getFormBody(params) {
   console.log('URLencoded form ', formBody.join('&'));
   return formBody.join('&');
 }
+
+export function getAuthTokenFromlocalStorage() {
+  return localStorage.getItem('token');
+}
