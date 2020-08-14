@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { PostList } from '.';
 import FriendsList from './FriendsList';
+import CreatePost from './CreatePost';
 
 export default class Home extends Component {
   render() {
