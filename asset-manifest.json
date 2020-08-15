@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/socio-app/static/css/main.16dabb2a.chunk.css",
-    "main.js": "/socio-app/static/js/main.4e06733b.chunk.js",
-    "main.js.map": "/socio-app/static/js/main.4e06733b.chunk.js.map",
+    "main.js": "/socio-app/static/js/main.713f8bfa.chunk.js",
+    "main.js.map": "/socio-app/static/js/main.713f8bfa.chunk.js.map",
     "runtime-main.js": "/socio-app/static/js/runtime-main.91a51cb9.js",
     "runtime-main.js.map": "/socio-app/static/js/runtime-main.91a51cb9.js.map",
     "static/js/2.0b77e8c9.chunk.js": "/socio-app/static/js/2.0b77e8c9.chunk.js",
     "static/js/2.0b77e8c9.chunk.js.map": "/socio-app/static/js/2.0b77e8c9.chunk.js.map",
     "index.html": "/socio-app/index.html",
-    "precache-manifest.981289387777d7b80e69f7e5b024e634.js": "/socio-app/precache-manifest.981289387777d7b80e69f7e5b024e634.js",
+    "precache-manifest.10d4ff921a9629d5033f4da219db3eb7.js": "/socio-app/precache-manifest.10d4ff921a9629d5033f4da219db3eb7.js",
     "service-worker.js": "/socio-app/service-worker.js",
     "static/css/main.16dabb2a.chunk.css.map": "/socio-app/static/css/main.16dabb2a.chunk.css.map",
     "static/js/2.0b77e8c9.chunk.js.LICENSE.txt": "/socio-app/static/js/2.0b77e8c9.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.91a51cb9.js",
     "static/js/2.0b77e8c9.chunk.js",
     "static/css/main.16dabb2a.chunk.css",
-    "static/js/main.4e06733b.chunk.js"
+    "static/js/main.713f8bfa.chunk.js"
   ]
 }
