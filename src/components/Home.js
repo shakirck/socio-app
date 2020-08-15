@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { PostList } from '.';
 import FriendsList from './FriendsList';
 import CreatePost from './CreatePost';
+import Chat from './Chat';
 
 export default class Home extends Component {
   render() {
@@ -10,6 +11,7 @@ export default class Home extends Component {
       <div className="home">
         <PostList posts={posts} />
         {isLoggedin && <FriendsList friends={friends} />}
+        {isLoggedin && <Chat />}
       </div>
     );
   }

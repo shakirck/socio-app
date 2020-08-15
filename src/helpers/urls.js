@@ -15,4 +15,5 @@ export const APIURLS = {
   createComment: () => `${APIroot}/comments/`,
   toggleLike: (id, likeType) =>
     `${APIroot}/likes/toggle?likeable_id=${id}&likeable_type=${likeType}`,
+  searchUser: (searchText) => `${APIroot}/users/search?text=${searchText}`,
 };

@@ -89,6 +89,9 @@ export class App extends React.Component {
           <Route path="/login" component={Login} />
           {/* <Route path="/logout" component={logout} /> */}
           <Route path="/signup" component={Signup} />
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
           <PrivateRoute
             path="/settings"
             component={Settings}
