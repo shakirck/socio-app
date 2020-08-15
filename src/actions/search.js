@@ -1,7 +1,4 @@
-import {
-  FETCH_USER_FRIENDS_SUCCESS,
-  FETCH_SEARCH_RESULTSSUCCESS,
-} from './actionTypes';
+import { FETCH_SEARCH_RESULTSSUCCESS } from './actionTypes';
 import { APIURLS } from '../helpers/urls';
 import { getAuthTokenFromlocalStorage } from '../helpers/util';
 
