@@ -67,14 +67,14 @@ export class App extends React.Component {
     const { posts, auth, friends } = this.props;
     console.log('FFFFFFFFRIEEEEEEEENDS', friends);
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div>
           <Navbar />
         </div>
         <Switch>
           <Route
             exact={true}
-            path="/home"
+            path="/"
             render={(props) => {
               return (
                 <Home
@@ -89,9 +89,9 @@ export class App extends React.Component {
           <Route path="/login" component={Login} />
           {/* <Route path="/logout" component={logout} /> */}
           <Route path="/signup" component={Signup} />
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <Redirect to="/home" />
-          </Route>
+          </Route> */}
           <PrivateRoute
             path="/settings"
             component={Settings}

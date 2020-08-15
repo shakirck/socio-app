@@ -21,7 +21,7 @@ export class Navbar extends Component {
     return (
       <nav className="nav">
         <div className="left-div">
-          <Link to="/home">
+          <Link to="/">
             <img
               className="logo"
               src="https://image.flaticon.com/icons/svg/3221/3221956.svg"
