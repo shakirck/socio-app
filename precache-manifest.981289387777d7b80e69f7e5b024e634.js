@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "15971a8d15ab80eb7f375c49d16f1cf6",
+    "revision": "5d73f574cae9b0cbb17a1e3d7e0bd1e6",
     "url": "/socio-app/index.html"
   },
   {
-    "revision": "79f673dd7c1eb926a41e",
+    "revision": "e92536263d1be53982a3",
     "url": "/socio-app/static/css/main.16dabb2a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/socio-app/static/js/2.0b77e8c9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "79f673dd7c1eb926a41e",
-    "url": "/socio-app/static/js/main.77c6aa0e.chunk.js"
+    "revision": "e92536263d1be53982a3",
+    "url": "/socio-app/static/js/main.4e06733b.chunk.js"
   },
   {
     "revision": "f62ed59997ac827a9ea0",
